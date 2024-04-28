@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street Company</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     <nav>
         <div id="navbar">
-            <div>
+            <div id="navbar-leftside">
                 <div id="logo-lp">
                     <img src="./public/assets/logo1-sc.png" alt="logo-1-streetcompany">
                 </div>
                 <div id="searchbar-lp">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="searchbar-input" name="searchbar-input">
+                    <input type="text" id="searchbar-input" name="searchbar-input" placeholder="Pesquisa...">
                 </div>
             </div>
-            <div>
+            <div id="navbar-rightside">
                 <div id="pages">
-                    <div id="animation-space">
+                    <div id="animation-space" class="hidden">
                         <a href="#">Início</a>
                         <a href="#">Sobre Nós</a>
                         <a href="#">Catálogo</a>
                     </div>
-                    <button id="dropdown-menu"></button>
+                    <button id="dropdown-menu"><i class="fa-solid fa-bars"></i></button>
                 </div>
                 <div id="login">
                     <button id="login-button">Entrar</button>
