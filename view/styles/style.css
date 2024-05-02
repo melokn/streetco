@@ -43,10 +43,8 @@ small {font-size: 0.750rem; /* 12px */}
 /* ESTILIZAÇÃO NAVBAR */
 
 #navbar{
-  width: 100vw;
+  width: 98.5vw;
   height: 8rem;
-  position: fixed;
-  top: 0;
   z-index: 1000;
   display: flex;
   background-color: rgba(0, 0, 0, 0.4);
@@ -71,7 +69,7 @@ small {font-size: 0.750rem; /* 12px */}
   display: flex;
   align-items: center;
   gap: 1rem;
-  
+
 }
 #searchbar-input{
   border: none;
@@ -91,7 +89,7 @@ small {font-size: 0.750rem; /* 12px */}
   gap: 1rem;
 }
 .hidden a{
-  transform: translateX(18rem);
+  transform: translateX(20rem);
 }
 @keyframes rotate-and-scale {
   0% {
@@ -119,7 +117,34 @@ small {font-size: 0.750rem; /* 12px */}
   color: var(--text-color);
   margin: 0 1rem 0 1rem;
   transition: transform 0.5s ease-in-out;
-  
+}
+#catalog{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+#catalog-dropdown{
+display: flex;
+gap: 5px;
+position: relative;
+}
+#catalog-content{
+  display: none;
+  position: absolute;
+  margin-top: 2rem;
+  margin-left: .8rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+#catalog-content button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  padding-top: 8px;
 }
 #dropdown-menu{
   background: none;
@@ -155,18 +180,16 @@ small {font-size: 0.750rem; /* 12px */}
 #main-section{
   display: flex;
   align-items: center;
-  gap: 2rem
-  ;
+  gap: 2rem;
 }
 #main-leftside{
-  margin-top: 5rem;
   margin-left: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 50vw;
-  height: 750px;
+  height: 500px;
 }
 #leftside-title img{
   width: 540px;
@@ -176,27 +199,26 @@ small {font-size: 0.750rem; /* 12px */}
   color: var(--sec-color);
 }
 #brands{
-  margin-top: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 1rem;
+  padding: .5rem;
 }
 #brands img{
   place-content: center;
-  width: 90%;
+  width: 80%;
   aspect-ratio: 5/5;
   background-color: var(--sec-color);
   border-radius: 100%;
-  padding: 1rem;
+  padding: .5rem;
 }
 #main-rightside{
-  margin-top: 10rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50vw;
-  height: 750px;
+  height: 600px;
   background: linear-gradient(180deg, var(--bg-color), var(--sec-color));
   background-size: 200% 250%;
   background-position: top;
