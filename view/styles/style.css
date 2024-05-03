@@ -43,7 +43,7 @@ small {font-size: 0.750rem; /* 12px */}
 /* ESTILIZAÇÃO NAVBAR */
 
 #navbar{
-  width: 98.5vw;
+  width: 100vw;
   height: 8rem;
   z-index: 1000;
   display: flex;
@@ -160,11 +160,13 @@ position: relative;
   transform-origin: center;
 }
 #login-button{
-  height: 4rem;
-  width: 8rem;
+  height: 3rem;
+  width: 10rem;
   font-size: 22px;
   background-color: #2188E7;
   border: none;
+  text-decoration: none;
+  padding: 1rem;
   cursor: pointer;
   border-radius: 20px;
   color: var(--text-color);
@@ -218,7 +220,7 @@ position: relative;
   align-items: center;
   justify-content: center;
   width: 50vw;
-  height: 600px;
+  height: 750px;
   background: linear-gradient(180deg, var(--bg-color), var(--sec-color));
   background-size: 200% 250%;
   background-position: top;

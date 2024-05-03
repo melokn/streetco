@@ -1,0 +1,29 @@
+#about-section{
+    background: url(../../public/assets/about/about-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 10rem;
+}
+#about-leftside{
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+#about-leftside img{
+    padding-left: 1rem;
+    width: 500px;
+}
+#about-leftside img:last-child{
+    padding-left: 3rem;
+    width: 850px;
+}
+#about-rightside{
+    display: grid;
+    place-content: center;
+}
+#about-rightside img{
+    width: 800px;
+}

@@ -22,3 +22,21 @@ document.getElementById('catalog-dropdown').addEventListener('click', ev =>{
     }
 
 })
+
+//VERIFICA SE USUÁRIO ESTÁ LOGADO:
+let isLoggedOn = false;
+function verifyLogin(){
+    if (isLoggedOn){
+        const linkIndex = document.getElementById('link-index');
+        linkIndex.href = './index.html'
+
+        const linkAbout = document.getElementById('link-about')
+        linkAbout.href = './view/templates/about.html'
+        
+        const buttons = document.querySelectorAll('#catalog-content button');
+
+        buttons.forEach(function(button) {
+            button.removeAttribute('disabled');
+        });
+    }
+}
