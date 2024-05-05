@@ -6,11 +6,13 @@
     height: 100vh;
     display: flex;
     gap: 10rem;
+    width: 100vw;
 }
 #about-leftside{
     padding-top: 4rem;
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 #about-leftside img{
     padding-left: 1rem;
@@ -23,7 +25,8 @@
 #about-rightside{
     display: grid;
     place-content: center;
+    overflow: hidden;
 }
 #about-rightside img{
-    width: 800px;
+    width: 600px;
 }

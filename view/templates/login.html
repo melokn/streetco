@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street Company</title>
-    <link rel="stylesheet" href="../styles/about.css">
+    <link rel="stylesheet" href="../styles/login.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <script src="../scripts/index.js"></script>
+    <link rel="icon" href="../../public/assets/logo1-sc.png" type="image/png">
+    <!-- <script src="../scripts/index.js" defer></script> -->
+    <script src="../scripts/loginVerify.js" defer></script>
 </head>
 <body>
-    <section>
+    <section id="login-section">
         <div id="login-container">
             <div id="img-login">
                 <img src="../../public/assets/logo-star.png" alt="">
@@ -18,13 +20,15 @@
                 <p>Já tem uma conta?</p>
                 <h4>Entre!</h4>
             </div>
-            <div id="form-login">
-                <label for="user-login">Usuário:</label>
-                <input type="text" id="user-login" name="user-login" required>
-                <label for="pwd-login">Senha:</label>
-                <input type="text" id="pwd-login" name="pwd-login">
-                <button id="submit">Entrar</button>
-                <h5>Ainda não tem uma conta? <span>Crie uma!</span></h5>
+            <div >
+                <form id="form-login">
+                    <label for="user-login">Usuário:</label>
+                    <input type="text" id="user-login" name="user-login" required>
+                    <label for="pwd-login">Senha:</label>
+                    <input type="password" id="pwd-login" name="pwd-login" required>
+                    <button id="submit-login">Entrar</button>
+                    <h6>Ainda não tem uma conta? <a href="./signup.html">Crie uma!</a></h6>
+                </form>
             </div>
         </div>
     </section>

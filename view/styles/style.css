@@ -232,3 +232,47 @@ position: relative;
   height: 100%; /* altura da imagem igual à altura da div */ /* redimensionar a imagem para preencher a div */
   overflow: hidden;
 }
+
+/* FOOTER ABAIXO */
+
+#footer-container{
+  width: 100vw;
+  height: 8rem;
+  background-color: var(--main-color);
+}
+  #footer-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    position: relative;
+  }
+  #footer-img{
+    width: 2rem;
+    align-self: flex-start;
+    height: fit-content;
+    position: absolute;
+    margin-top: 1rem;
+    top: 0;
+    left: 0;
+  }
+  #footer-img img{
+    width: 10rem;
+    align-self: flex-start;
+  }
+#footer-top i{
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  justify-self: center;
+  border: solid 2px var(--sec-color);
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#footer-bottom{
+  background-color: #2d9df9;
+  text-align: center;
+}
