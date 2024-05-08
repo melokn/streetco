@@ -1,0 +1,60 @@
+:root{
+    --card-bg: #f2f2f2;
+}
+#container-cards{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+.card{
+    background-color: var(--card-bg);
+    width: fit-content;
+    border-radius: 40px;
+    margin-bottom: 3rem;
+    position: relative;
+    /* transition: filter 0.3s;  */
+}
+.card img{
+    width: 280px;
+}
+.add-to-cart{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 16px;
+    background-color: var(--main-color);
+    border: none;
+    z-index: -1;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.card:hover .add-to-cart{
+    z-index: 1;
+    filter: blur(0);
+}
+.add-to-cart:hover{
+    opacity: 0.8;
+}
+.card:hover .card-image{
+    filter: blur(5px) brightness(50%);
+}
+.card-desc{
+    position: absolute;
+    background-color: var(--sec-color);
+    color: var(--text-color);
+    text-align: center;
+    z-index: -1;
+    height: 4rem;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 0 0 15px 15px;
+    z-index: -1;
+    transform: translateY(-35px);
+}
+
