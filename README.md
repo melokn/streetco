@@ -1,9 +1,6 @@
 
-**Front:**
+~~**Front:**~~
 - ~~criar pagina de catalogo~~
-- criar carrinho* 
-- adicionar funcionalidade ao carrinho (sem banco de pref)*
-- *postergadas
 
 ----
 
@@ -17,14 +14,19 @@
 
 **Back:**
 
-- realizar cadastro de usuário no banco
-- ser capaz de realizar login
-- resgatar os produtos cadastrados no banco para listar no catalogo
+- criar model (server.js)
+- criar API POST /user 
+- criar API GET /user p/login
+- criar API GET /product 
+- criar controller (addUser.js)
+- criar controller (getUser.js)
+- criar controller (getProduct.js)
 
 ---- 
 
 **Se sobrar tempo:**
-
+- criar carrinho* 
+- adicionar funcionalidade ao carrinho (sem banco de pref)*
 - adicionar filtros no catálogo
 - fazer com que a lupa de busca seja funcional
 
