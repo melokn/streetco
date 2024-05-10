@@ -1,18 +1,41 @@
+function loginVerify (){
+    console.log('chegou na funcao')
+    const username = document.getElementById('user-login')
+    const password = document.getElementById('pwd-login')
 
-const linkIndex = document.getElementById('link-index');
-linkIndex.href = './index.html'
-    
-const linkAbout = document.getElementById('link-about')
-linkAbout.href = './view/templates/about.html'
+    const loginData = {
+        username: username.value,
+        password: password.value
+    }
 
-const buttons = document.querySelectorAll('#catalog-content button');
+    fetch('http://localhost:3301/loginverify', {
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/json',
+        },
+        body: JSON.stringify(loginData),
+    })
+    .then(response => {
+        if(!response.ok){
+            throw new Error('response was not ok!')
+        }
+        return response;
+    })
+    .then(data => {
+        console.log('Usuário logado: ', data);
+        alert('Usuario logado com sucesso!')
+        localStorage.setItem('isLoggedIn', 'true');
+        console.log('esta logado')
+        window.location.href = '/index.html'
+    })
+    .catch(error => {
+        console.error('Erro ao cadastrar:', error);
+        alert('Usuário ou senha incorretos. Por favor, tente novamente.');
+    });
+}
 
-buttons.forEach(function(button) {
-    button.removeAttribute('disabled');
-});
-const divLogin = document.getElementById('login')
-const cartButton = document.createElement('button')
-cartButton.id = 'cartButton'
-cartButton.innerText = '<i class="fa-solid fa-cart-shopping"></i>'
-divLogin.removeChild(divLogin.firstChild)
-divLogin.appendChild(cartButton)
+document.getElementById('submit-login').addEventListener('click', ev => {
+    ev.preventDefault()
+    loginVerify()
+    console.log('voce clicou bebe')
+})

@@ -1,18 +1,17 @@
-document.getElementById('submit-signup').addEventListener('click', addUser)
 
 function addUser(){
-    const user = document.getElementById('user-signup')
+    const username = document.getElementById('user-signup')
     const name = document.getElementById('name-signup')
     const cpf = document.getElementById('cpf-signup')
-    const password = document.getElementById('password-signup')
+    const password = document.getElementById('pwd-signup')
 
     const userData = {
-        user: user.value,
+        username: username.value,
         name: name.value,
         cpf: cpf.value,
         password: password.value
     }
-
+    console.log(userData)
     fetch('http://localhost:3301/adduser', {
         method: 'POST',
         headers: {
@@ -36,3 +35,11 @@ function addUser(){
         alert('Erro ao cadastrar usuário. Por favor, tente novamente.');
     });
 }
+
+document.getElementById('submit-signup').addEventListener('click', ev =>{
+    ev.preventDefault()
+    addUser()
+    console.log('cosseno dezena vai SE FUDEmihar')
+
+})
+    console.log('merda')

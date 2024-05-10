@@ -16,7 +16,7 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
     user: 'root',
-    password: ' ',
+    password: '',
     database: 'streetcompany'
 });
 
@@ -31,7 +31,7 @@ function verificarConexao() {
 }
 
 app.post('/adduser', (req, res) => {
-    const { username, _name, cpf, password } = req.body;
+    const {username, name, cpf, password } = req.body;
     pool.query('SELECT * FROM tb_users WHERE cpf = ?', [cpf], (error, results) => {
         if (error) {
             console.error('Erro na verificação do usuário:', error);
@@ -41,8 +41,8 @@ app.post('/adduser', (req, res) => {
         if (results.length > 0) {
             return res.status(409).send('Usuário já existe.'); 
         } else {
-            pool.query('INSERT INTO tb_users (username, _name, cpf, password) VALUES (?, ?, ?, ?)',
-                [username, _name, cpf, password], (error, results) => {
+            pool.query('INSERT INTO tb_users (username, name, cpf, password) VALUES (?, ?, ?, ?)',
+                [username, name, cpf, password], (error, results) => {
                     if (error) {
                         console.error('Erro ao adicionar usuário:', error);
                         return res.status(500).send('Erro ao processar sua requisição');
@@ -52,8 +52,8 @@ app.post('/adduser', (req, res) => {
         }
     });
 });
-app.get('/loginVerify', (req, res) =>{
-    const {username, pwd} = req.body;
+app.post('/loginverify', (req, res) =>{
+    const {username, password} = req.body;
     pool.query('SELECT * FROM tb_users WHERE username = ?', [username], (error, results)=>{
         if(error){
             console.error('Erro ao fazer login:', error);
@@ -61,16 +61,19 @@ app.get('/loginVerify', (req, res) =>{
         }
         if(results.length > 0){
             results.forEach(element =>{
-                if(element.username == username && element.password == pwd){
+                if(element.username == username && element.password == password){
                     res.status(201).send('Logado com sucesso!')
                     return;
+                }else{
+                    res.status(500).send('Usuário ou senha incorretos.')
                 }
             })
         }else{
-            res.status(404).send('Usuário não encontrado')
+            res.status(500).send('Usuário não encontrado')
         }
     })
 })
+
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);

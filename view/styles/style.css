@@ -276,3 +276,20 @@ position: relative;
   background-color: #2d9df9;
   text-align: center;
 }
+
+/* Carrinho botão */
+#cartButton{
+  background: none;
+  border: none;
+  font-size: 32px;
+  margin-right: 1rem;
+  padding-right: 1.5rem;
+  cursor: pointer;
+}
+#exitButton{
+  background: none;
+  border: none;
+  font-size: 32px;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
