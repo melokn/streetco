@@ -30,7 +30,8 @@ function loginVerify (){
     })
     .catch(error => {
         console.error('Erro ao cadastrar:', error);
-        alert('Usuário ou senha incorretos. Por favor, tente novamente.');
+        document.getElementById('user-login').classList.add('incorrect')
+        document.getElementById('pwd-login').classList.add('incorrect')
     });
 }
 

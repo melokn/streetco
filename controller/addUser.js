@@ -32,14 +32,16 @@ function addUser(){
     })
     .catch(error => {
         console.error('Erro ao cadastrar:', error);
-        alert('Erro ao cadastrar usuário. Por favor, tente novamente.');
+        document.getElementById('user-signup').classList.add('incorrect')   
+        document.getElementById('name-signup').classList.add('incorrect')
+        document.getElementById('cpf-signup').classList.add('incorrect')
+        document.getElementById('pwd-signup').classList.add('incorrect')
     });
 }
 
 document.getElementById('submit-signup').addEventListener('click', ev =>{
     ev.preventDefault()
     addUser()
-    console.log('cosseno dezena vai SE FUDEmihar')
 
 })
     console.log('merda')

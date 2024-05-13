@@ -21,9 +21,11 @@ document.getElementById("catalog-dropdown").addEventListener("click", (ev) => {
     dropdownContent.style.display = "none";
   }
 });
+//DIRECIONA PARA O CATÁLOGO
 
-// VERIFICA SE O USUARIO ESTA LOGADO TODA VEZ QUE A PAGINA CARREGA
-function updateUI() {
+//ALTERA A PERMISSÃO DAS ANCORAS
+
+function updateIndexUI() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   if (isLoggedIn === "true") {
     const linkIndex = document.getElementById("link-index");
@@ -37,26 +39,16 @@ function updateUI() {
     buttons.forEach(function (button) {
       button.removeAttribute("disabled");
     });
-    const divLogin = document.getElementById("login");
-    const cartButton = document.createElement("button");
-    cartButton.id = "cartButton";
-    cartButton.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>';
-    const exitButton = document.createElement("button");
-    exitButton.id = "exitButton";
-    exitButton.innerHTML = '<i class="fa-solid fa-right-from-bracket"></i>';
-    //SAIR DA CONTA
-    exitButton.addEventListener("click", (ev) => {
-      ev.preventDefault();
-      localStorage.setItem("isLoggedIn", "false");
-      window.location.reload()
-    });
-    if (divLogin && divLogin.firstElementChild) {
-      divLogin.firstElementChild.remove();
-    } else {
-      console.log("Nenhum elemento filho para remover");
-    }
-
-    divLogin.append(cartButton, exitButton);
   }
 }
-document.addEventListener("DOMContentLoaded", updateUI);
+document.addEventListener("DOMContentLoaded", updateIndexUI);
+
+//Adicona ancora ao catalogo
+const catalogButton = document.querySelectorAll(".catalogButton");
+catalogButton.forEach((button) => {
+  button.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    window.location.href = "/view/templates/catalog.html";
+  });
+});

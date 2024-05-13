@@ -74,6 +74,15 @@ app.post('/loginverify', (req, res) =>{
     })
 })
 
+app.get('/getcatalog', (req, res) => {
+    pool.query('SELECT * FROM tb_products', (error, results) =>{
+        if(error){
+            console.error('Erro ao buscar produtos:', error);
+            return res.status(500).send('Erro ao processar sua requisição')
+        }
+        res.status(200).json(results)
+    })
+})
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);

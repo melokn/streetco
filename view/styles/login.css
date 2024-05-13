@@ -131,3 +131,7 @@
     text-decoration: none;
     color: #2d9df9;
 }
+
+.incorrect{
+    border-color: rgb(228, 42, 42);
+}
