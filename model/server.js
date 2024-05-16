@@ -80,7 +80,7 @@ app.get('/getcatalog', (req, res) => {
             console.error('Erro ao buscar produtos:', error);
             return res.status(500).send('Erro ao processar sua requisição')
         }
-        res.status(200).json(results)
+        res.status(200).send(results)
     })
 })
 

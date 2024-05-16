@@ -8,19 +8,19 @@
 
 - ~~Criar o mer~~
 - ~~Criar o der~~
-- criar script mysql com base no der
+- ~~criar script mysql com base no der~~
 
 ----
 
 **Back:**
 
-- criar model (server.js)
-- criar API POST /user 
-- criar API GET /user p/login
-- criar API GET /product 
-- criar controller (addUser.js)
-- criar controller (getUser.js)
-- criar controller (getProduct.js)
+- ~~criar model (server.js)~~
+- ~~criar API POST /user~~ 
+- ~~criar API POST /user p/login~~
+- ~~criar API GET /product~~ 
+- ~~criar controller (addUser.js)~~
+- ~~criar controller (getUser.js)~~
+- ~~criar controller (getProduct.js)~~
 
 ---- 
 
